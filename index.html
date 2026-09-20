@@ -25,9 +25,22 @@
                     <div class="card-header">
                         <h6>Create New Task</h6>
                     </div>
-                    <div class="card-body">
-                        <!-- TODO -->
-                    </div>
+
+                    <form id="taskForm" class="card-body">
+                        <div>
+                            <input type="text" id="Name" name="name" placeholder="Your name goes here" required>
+                        </div>
+
+                        <div>
+                            <input type="text" id="About" name="about" placeholder="What is the task about" required>
+                        </div>
+
+                        <div>
+                            <input type="date" id="DueDate" name="dueDate" required>
+                        </div>
+
+                        <button type="submit" id="createTask">Create Task</button>
+                    </form>
                 </div>
 
                 <!-- Task List -->
