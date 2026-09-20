@@ -45,6 +45,33 @@ function renderTasks() {
 // Initialize the app when page loads
 document.addEventListener('DOMContentLoaded', function() {
     renderTasks();
-    
-    // TODO
+
+    const taskForm = document.getElementById('taskForm');
+    const nameInput = document.getElementById('Name');
+    const aboutInput = document.getElementById('About');
+    const dueDateInput = document.getElementById('DueDate');
+
+    taskForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const title = nameInput.value.trim();
+        const description = aboutInput.value.trim();
+        const dueDate = dueDateInput.value;
+
+        if (!title || !description || !dueDate) {
+            return;
+        }
+
+        tasks.push({
+            id: Date.now(),
+            title,
+            description,
+            dueDate,
+            assignedTo: "",
+            completed: false
+        });
+
+        renderTasks();
+        taskForm.reset();
+    });
 });
